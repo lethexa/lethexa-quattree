@@ -5,9 +5,9 @@ var quattree = require((process.env.APP_DIR_FOR_CODE_COVERAGE || '../lib/') + 'q
 
 describe('QuatTree', function () {    
 
-    var TestItem = function(value) {
+    var TestItem = function(x,y) {
       this.getValue = function() {
-	return value;
+	return [x,y];
       };
     };
 
@@ -15,10 +15,10 @@ describe('QuatTree', function () {
     describe('#ForEachInRange()', function () {
         it('should return one item when in range and subdivision level is 0', function () {
             var resultList = [];
-            var tree = new quattree.QuatTree(0, 10, 0);
-            tree.registerItem(new TestItem(4));
+            var tree = new quattree.QuatTree(0,0, 10,10, 0);
+            tree.registerItem(new TestItem(4,4));
 
-            tree.forEachInRange(0, 5, function(item) {
+            tree.forEachInRange(0,0, 5,5, function(item) {
 	      resultList.push(item);
 	    });
 
