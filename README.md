@@ -11,16 +11,16 @@ Usage
 
 	var quattree = require('lethexa-quattree');
 	
-	var TestItem = function(value) {
+	var TestItem = function(x,y) {
 		this.getValue = function() {
-			return value;
+			return [x,y];
 		};
 	};
 
 
 	var resultList = [];
 	var tree = new quattree.QuatTree(0,0, 10,10, 0);
-	tree.registerItem(new TestItem(4));
+	tree.registerItem(new TestItem(4,4));
 
 	tree.forEachInRange(0,0, 5,5, function(item) {
 		resultList.push(item);
