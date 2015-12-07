@@ -1,0 +1,6 @@
+/node_modules/
+/doc/
+/dist/
+/build/
+/coverage/
+results.txt
